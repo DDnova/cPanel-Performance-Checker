@@ -67,37 +67,68 @@ This Bash script performs a check on a cPanel server to monitor various aspects 
 ## Example Output
 
 ```shell
-# CPU Load Check
-CPU Load: 7.5
-CPU Cores: 4
-Suggestion: CPU load is high. Consider investigating running processes or upgrading your CPU.
+====================================
+  Website Load Check on cPanel Server
+====================================
+------------------------------------
+Checking CPU Load
+------------------------------------
+Current load averages: 0.00, 0.01, 0.05
+CPU load is normal.
 
-# Memory Usage Check
-Total Memory: 16 GB
-Used Memory: 13.5 GB (84%)
-Suggestion: Memory usage is above 80%. Consider adding more RAM or optimizing your applications.
+------------------------------------
+Checking Memory Usage
+------------------------------------
+Memory Usage: 0/3GB (0.00%)
 
-# Disk Usage Check
-Root Partition Usage: 90 GB (85%)
-Suggestion: Disk usage is above 80%. Consider cleaning up disk space or adding more storage.
+------------------------------------
+Checking Disk Usage
+------------------------------------
+Disk Usage: 17/40GB (42%)
 
-# Apache Status Check
-Apache is running.
+------------------------------------
+Checking Apache (httpd) Status
+------------------------------------
+Apache (httpd) is running
 
-# MySQL/MariaDB Status Check
-MySQL is running.
+------------------------------------
+Checking MySQL/MariaDB Status
+------------------------------------
+MySQL/MariaDB is running
 
-# MySQL Sleep Queries Check
-Sleep Queries: 15
-Suggestion: There are more than 10 sleep queries. Investigate long-running queries and optimize your database.
+------------------------------------
+Checking MySQL Sleep Queries
+------------------------------------
+MySQL sleep queries: 0
 
-# Apache MaxRequestWorkers Check
+------------------------------------
+Checking PHP-FPM Max Children
+------------------------------------
+PHP-FPM max children setting is adequate.
+
+------------------------------------
+Checking Apache MaxRequestWorkers
+------------------------------------
 MaxRequestWorkers: 150
 
-# PHP-FPM max_children Check
-Warning: [29-May-2024 12:34:56] WARNING: [pool www] server reached max_children setting (5), consider raising it
+------------------------------------
+Calculating Optimal MaxRequestWorkers
+------------------------------------
+Average memory usage per Apache process: 7.79248MB
+Estimated memory usage by non-Apache processes: 1116.7MB
+Memory available for Apache: 2672.3MB
+Optimal MaxRequestWorkers: 342
+Suggestion: Consider increasing MaxRequestWorkers to 342.
+Note: You may also need to increase ServerLimit to 342.
 
-# Calculate Optimal MaxRequestWorkers
-Optimal MaxRequestWorkers: 200
-Suggestion: Based on your available memory, consider setting MaxRequestWorkers to 200 and ServerLimit to 200.
-
+------------------------------------
+Providing Suggestions
+------------------------------------
+Memory usage is normal.
+Disk usage is normal.
+Apache (httpd) is running fine.
+MySQL/MariaDB is running fine.
+MySQL sleep queries are within normal limits.
+====================================
+           Check Complete
+====================================
