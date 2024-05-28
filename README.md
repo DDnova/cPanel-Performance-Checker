@@ -2,54 +2,6 @@
 
 This Bash script performs a check on a cPanel server to monitor various aspects of its performance, including CPU load, memory usage, disk usage, and the status of critical services such as Apache (httpd) and MySQL/MariaDB. Additionally, it provides suggestions for optimizing the server based on the findings.
 
-## Features
-
-### 1. CPU Load Check
-
-- **Description**: Checks the current CPU load and compares it with the number of available CPU cores.
-- **Action**: Provides suggestions if the CPU load is higher than the number of cores.
-
-### 2. Memory Usage Check
-
-- **Description**: Displays the current memory usage in GB and percentage.
-- **Action**: Provides suggestions if memory usage is higher than 95%.
-
-### 3. Disk Usage Check
-
-- **Description**: Displays the current disk usage of the root partition.
-- **Action**: Provides suggestions if disk usage is higher than 98%.
-
-### 4. Apache (httpd) Status Check
-
-- **Description**: Checks if the Apache (httpd) service is running.
-- **Action**: Provides suggestions if the service is not running.
-
-### 5. MySQL/MariaDB Status Check
-
-- **Description**: Checks if either MySQL or MariaDB service is running.
-- **Action**: Provides suggestions if neither service is running.
-
-### 6. MySQL Sleep Queries Check
-
-- **Description**: Counts the number of MySQL sleep queries.
-- **Action**: Provides suggestions if there are more than 1 sleep queries.
-
-### 7. Apache MaxRequestWorkers Check
-
-- **Description**: Displays the current `MaxRequestWorkers` setting in the Apache configuration.
-
-### 8. PHP-FPM max_children Check
-
-- **Description**: Checks for warnings in PHP-FPM logs indicating that the `max_children` setting has been reached.
-- **Action**: Provides the most recent warning log entry as a suggestion if the setting is reached.
-
-### 9. Calculate Optimal MaxRequestWorkers
-
-- **Description**: Calculates the optimal `MaxRequestWorkers` setting based on the available memory and average memory usage of Apache processes.
-- **Action**: Provides suggestions to adjust `MaxRequestWorkers` and `ServerLimit` if necessary.
-
----
-
 ## Detailed Breakdown
 
 ### CPU Load Check
