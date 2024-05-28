@@ -12,7 +12,7 @@ This Bash script performs a check on a cPanel server to monitor various aspects 
 ### 2. Memory Usage Check
 
 - **Description**: Displays the current memory usage in GB and percentage.
-- **Action**: Provides suggestions if memory usage is higher than 80%.
+- **Action**: Provides suggestions if memory usage is higher than 95%.
 
 ### 3. Disk Usage Check
 
