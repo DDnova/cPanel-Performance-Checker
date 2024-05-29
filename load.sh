@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# Author: Darryl Dsouza
+# Date: 2024-05-29
+# License: MIT License
+
 # Function to check CPU load and compare with number of cores
 check_cpu_load() {
     echo "------------------------------------"
