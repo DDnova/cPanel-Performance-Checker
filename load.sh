@@ -54,7 +54,7 @@ check_mysql_status() {
     echo "------------------------------------"
     echo "Checking MySQL/MariaDB Status"
     echo "------------------------------------"
-    systemctl is-active mysql >/dev/null 2>&1 || systemctl is-active mariadb >/dev/null 2>&1
+    systemctl is-active mysqld >/dev/null 2>&1 || systemctl is-active mariadb >/dev/null 2>&1
     if [ $? -eq 0 ]; then
         echo "MySQL/MariaDB is running"
     else
