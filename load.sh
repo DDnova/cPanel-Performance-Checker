@@ -54,9 +54,19 @@ check_mysql_status() {
     echo "------------------------------------"
     echo "Checking MySQL/MariaDB Status"
     echo "------------------------------------"
-    systemctl is-active mysqld >/dev/null 2>&1 || systemctl is-active mariadb >/dev/null 2>&1
-    if [ $? -eq 0 ]; then
-        echo "MySQL/MariaDB is running"
+    # Check mysqld service status
+    systemctl is-active mysqld >/dev/null 2>&1
+    mysqld_status=$?
+    
+    # Check mariadb service status
+    systemctl is-active mariadb >/dev/null 2>&1
+    mariadb_status=$?
+
+    # Determine if either service is running
+    if [ $mysqld_status -eq 0 ]; then
+        echo "MySQL (mysqld) is running"
+    elif [ $mariadb_status -eq 0 ]; then
+        echo "MariaDB (mariadb) is running"
     else
         echo -e "\033[1;33mMySQL/MariaDB is not running\033[0m"
     fi
