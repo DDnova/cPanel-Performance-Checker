@@ -178,12 +178,6 @@ provide_suggestions() {
         echo "Apache (httpd) is running fine."
     fi
 
-    # MySQL/MariaDB status suggestion
-    if ! systemctl is-active mysql >/dev/null 2>&1 && ! systemctl is-active mariadb >/dev/null 2>&1; then
-        echo -e "\033[1;33mSuggestion:\033[0m MySQL/MariaDB is not running. Consider restarting the service or checking the logs for errors."
-    else
-        echo "MySQL/MariaDB is running fine."
-    fi
 
     # MySQL sleep queries suggestion
     if [ "$sleep_queries" -gt 1 ]; then
