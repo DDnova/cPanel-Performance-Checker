@@ -4,7 +4,7 @@ This Bash script performs a check on a cPanel server to monitor various aspects 
 
 ## Usage
 ```shell
-wget -O - https://github.com/DDnova/cPanel-Performance-Checker/load.sh | bash
+ wget -O - https://cpanel-performance-checker.pages.dev/load.sh | bash
 ```
 
 ## Detailed Breakdown
