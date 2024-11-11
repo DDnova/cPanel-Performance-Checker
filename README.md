@@ -2,6 +2,11 @@
 
 This Bash script performs a check on a cPanel server to monitor various aspects of its performance, including CPU load, memory usage, disk usage, and the status of critical services such as Apache (httpd) and MySQL/MariaDB. Additionally, it provides suggestions for optimizing the server based on the findings.
 
+## Usage
+```shell
+wget -O - https://github.com/DDnova/cPanel-Performance-Checker/load.sh | bash
+```
+
 ## Detailed Breakdown
 
 ### CPU Load Check
